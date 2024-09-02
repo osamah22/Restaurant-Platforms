@@ -1,13 +1,11 @@
-﻿
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Restaurants_Platform.Data.Config;
 using Restaurants_Platform.Models;
 
 namespace Restaurants_Platform.Data;
 
-public class ApplicationContext : DbContext
+public class ApplicationContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
 {
     public ApplicationContext(DbContextOptions options) : base(options) { }
 
@@ -19,10 +17,29 @@ public class ApplicationContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder
-            .ApplyConfiguration(new RestaurantConfig())
-            .ApplyConfiguration(new FoodItemConfig());
 
+        //Making PKs Not Clustered
+        builder.Entity<AppUser>()
+            .HasKey(user => user.Id)
+            .IsClustered(false);
+
+        builder.Entity<Restaurant>()
+            .HasKey(r => r.Id)
+            .IsClustered(false);
+
+        builder.Entity<FoodItem>()
+            .HasKey(item => item.Id)
+            .IsClustered(false);
+
+        builder.Entity<Order>()
+            .HasKey(o => o.Id)
+            .IsClustered(false);
+
+        // OrderItem composite key 
+        builder.Entity<OrderItem>()
+            .HasKey(item => new { item.OrderId, item.FoodItemId });
+
+        //Making Relationships between entities
         builder.Entity<Restaurant>()
             .HasMany(restaurant => restaurant.Menu)
             .WithOne(foodItem => foodItem.Restaurant)
@@ -36,8 +53,11 @@ public class ApplicationContext : DbContext
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
 
-        builder.Entity<OrderItem>()
-            .HasKey(i => new { i.OrderId, i.FoodItemId });
+        builder.Entity<AppUser>()
+            .HasMany(u => u.Orders)
+            .WithOne(o => o.AppUser)
+            .HasForeignKey(o => o.AppUserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         base.OnModelCreating(builder);
     }

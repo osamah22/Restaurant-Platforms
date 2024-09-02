@@ -1,44 +1,36 @@
 ﻿using Restaurants_Platform.Dtos.Orders.OrderItems;
 using Restaurants_Platform.Models;
 
-namespace Restaurants_Platform.Mappers
+namespace Restaurants_Platform.Mappers;
+
+public static class OrderItemMappers
 {
-    public static class OrderItemMappers
+    public static OrderItemDto ToOrderItemDto(this OrderItem orderItemModel)
     {
-        public static OrderItemDto ToOrderItemDto(this OrderItem orderItemModel)
+        decimal itemPrice = orderItemModel?.FoodItem?.Price ?? 0;
+        var quantity = orderItemModel?.Quantity ?? 0;
+
+        return new OrderItemDto
         {
-            /*          if (orderItemModel == null)
-                          throw new ArgumentNullException(nameof(orderItemModel), "OrderItem cannot be null");
+            RestaurantId = orderItemModel!.FoodItem?.Restaurant?.Id.ToString()?? "Not availble",
+            RestaurantName = orderItemModel.FoodItem?.Restaurant?.Name ?? "Not availble",
+            FoodItemId = orderItemModel.FoodItemId.ToString(),
+            FoodItemName = orderItemModel.FoodItem?.Name ?? "Not availble",
+            Quantity = quantity,
+            Price = orderItemModel.FoodItem?.Price ?? 0m,
+            Total = itemPrice * quantity
+        };
+    }
 
-                      if (orderItemModel.FoodItem == null)
-                          throw new ArgumentNullException(nameof(orderItemModel.FoodItem), "FoodItem cannot be null");
+    public static OrderItem ToOrderItemFromCreate(this CreateOrderItemDto itemDto)
+    {
+        if (itemDto == null)
+            throw new ArgumentNullException(nameof(itemDto), "CreateOrderItemDto cannot be null");
 
-                      if (orderItemModel.FoodItem.Restaurant == null)
-                          throw new ArgumentNullException(nameof(orderItemModel.FoodItem.Restaurant), "Restaurant cannot be null");*/
-            decimal itemPrice = orderItemModel?.FoodItem?.Price ?? 0;
-            var quantity = orderItemModel?.Quantity ?? 0;
-            return new OrderItemDto
-            {
-                RestaurantId = orderItemModel.FoodItem.Restaurant.Id.ToString(),
-                RestaurantName = orderItemModel.FoodItem.Restaurant.Name,
-                FoodItemId = orderItemModel.FoodItemId.ToString(),
-                FoodItemName = orderItemModel.FoodItem.Name,
-                Quantity = quantity,
-                Price = orderItemModel.FoodItem.Price,
-                Total = itemPrice * quantity
-            };
-        }
-
-        public static OrderItem ToOrderItemFromCreate(this CreateOrderItemDto itemDto)
+        return new OrderItem
         {
-            if (itemDto == null)
-                throw new ArgumentNullException(nameof(itemDto), "CreateOrderItemDto cannot be null");
-
-            return new OrderItem
-            {
-                FoodItemId = itemDto.FoodItemId,
-                Quantity = itemDto.Quantity
-            };
-        }
+            FoodItemId = itemDto.FoodItemId,
+            Quantity = itemDto.Quantity
+        };
     }
 }

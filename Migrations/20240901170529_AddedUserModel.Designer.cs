@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Restaurants_Platform.Data;
@@ -11,9 +12,11 @@ using Restaurants_Platform.Data;
 namespace Restaurants_Platform.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240901170529_AddedUserModel")]
+    partial class AddedUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -213,8 +216,7 @@ namespace Restaurants_Platform.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
-                    b.HasKey("Id")
-                        .HasAnnotation("SqlServer:Clustered", false);
+                    b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -237,7 +239,7 @@ namespace Restaurants_Platform.Migrations
                         .HasColumnType("text");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("numeric");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<Guid>("RestId")
                         .HasColumnType("uuid");
@@ -247,7 +249,7 @@ namespace Restaurants_Platform.Migrations
 
                     b.HasIndex("RestId");
 
-                    b.ToTable("FoodItems", (string)null);
+                    b.ToTable("FoodItem", (string)null);
                 });
 
             modelBuilder.Entity("Restaurants_Platform.Models.Order", b =>
@@ -262,12 +264,11 @@ namespace Restaurants_Platform.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("Id")
-                        .HasAnnotation("SqlServer:Clustered", false);
+                    b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Restaurants_Platform.Models.OrderItem", b =>
@@ -285,7 +286,7 @@ namespace Restaurants_Platform.Migrations
 
                     b.HasIndex("FoodItemId");
 
-                    b.ToTable("OrderItems", (string)null);
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("Restaurants_Platform.Models.Restaurant", b =>
@@ -304,7 +305,7 @@ namespace Restaurants_Platform.Migrations
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:Clustered", false);
 
-                    b.ToTable("Restaurants", (string)null);
+                    b.ToTable("Restaurant", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>

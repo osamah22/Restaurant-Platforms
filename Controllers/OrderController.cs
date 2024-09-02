@@ -3,11 +3,13 @@ using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Models;
 using Restaurants_Platform.Dtos.Orders;
 using Restaurants_Platform.Mappers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Restaurants_Platform.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class OrderController : ControllerBase
     {
         private readonly IOrderRepository _orderRepository;
@@ -24,6 +26,7 @@ namespace Restaurants_Platform.Controllers
             var orderDtos = orders.Select(o => o.ToOrderDto()).ToList();
             return Ok(orderDtos);
         }
+
 
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<OrderDto>> GetById(Guid id)

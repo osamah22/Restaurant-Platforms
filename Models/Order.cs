@@ -6,5 +6,9 @@ public class Order
 
     public DateTime CreatedAt { get; set; }
 
+    public Guid AppUserId { get; set; }
+
+    public AppUser? AppUser { get; set; }
+
     public virtual List<OrderItem>? OrderItems { get; set; }
 }
