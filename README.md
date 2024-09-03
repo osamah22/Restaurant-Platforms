@@ -12,8 +12,8 @@ Technologies Used
 
     ASP.NET Core: Web API framework for building RESTful services.
     Entity Framework Core: Object-relational mapper (ORM) for database interactions.
-    SQL Server: Relational database management system (RDBMS) used for data storage.
-    AutoMapper: Library used for mapping between models and data transfer objects (DTOs).
+    Postgres SQL: Relational database management system (RDBMS) used for data storage.
+    
 Getting Started
 
     Clone the repository:
@@ -40,6 +40,7 @@ Possible Improvements
     Improved Validation: Enhance the validation logic, including custom validators and more comprehensive error messages.
     Unit and Integration Testing: Expand the test coverage to include more unit and integration tests, ensuring the robustness of the application.
     Containerization: Dockerize the application to simplify deployment and scalability.
+    Usage of AutoMapper: Library used for mapping between models and data transfer objects (DTOs).
 
 Contribution
 
