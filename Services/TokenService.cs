@@ -24,8 +24,7 @@ public class TokenService : ITokenService
         // Define the claims that will be included in the token
         var claims = new[]
         {
-                new Claim(JwtRegisteredClaimNames.Sub, appUser.UserName!),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.GivenName, appUser.UserName!),
                 new Claim(ClaimTypes.NameIdentifier, appUser.Id.ToString())
         };
 

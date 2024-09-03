@@ -19,19 +19,18 @@ public class OrderController : ControllerBase
         _orderRepository = orderRepository;
     }
 
-    [HttpGet]
-    public async Task<ActionResult<List<OrderDto>>> GetAll()
+    [HttpGet("All")]
+    public async Task<IActionResult> GetAll()
     {
-        var orders = await _orderRepository.GetAll();
+        var orders = await _orderRepository.GetAllAsync();
         var orderDtos = orders.Select(o => o.ToOrderDto()).ToList();
         return Ok(orderDtos);
     }
 
-
     [HttpGet("{id:guid}")]
-    public async Task<ActionResult<OrderDto>> GetById(Guid id)
+    public async Task<IActionResult> GetById(Guid id)
     {
-        var order = await _orderRepository.GetById(id);
+        var order = await _orderRepository.GetByIdAsync(id);
 
         if (order == null)
             return NotFound();
@@ -39,10 +38,10 @@ public class OrderController : ControllerBase
         return Ok(order.ToOrderDto());
     }
 
-    [HttpGet("restaurant/{restaurantId:guid}")]
-    public async Task<ActionResult<List<OrderDto>>> GetByRestaurantId(Guid restaurantId)
+    [HttpGet($"{nameof(Restaurant)}/{{restaurantId:guid}}")]
+    public async Task<IActionResult> GetByRestaurantId(Guid restaurantId)
     {
-        var orders = await _orderRepository.GetByRestaurantId(restaurantId);
+        var orders = await _orderRepository.GetByRestaurantIdAsync(restaurantId);
 
         if (!orders.Any())
             return NotFound();
@@ -51,11 +50,34 @@ public class OrderController : ControllerBase
         return Ok(orderDtos);
     }
 
-    [HttpPost]
-    public async Task<ActionResult<OrderDto>> Create(CreateOrderRequestDto createOrderDto)
+    [HttpGet]
+    public async Task<IActionResult> GetUserOrders()
     {
+        var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        //Guid userId = Guid.Empty;
+        if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
+        {
+            return Unauthorized("Invalid or missing user ID.");
+        }
+
+        var userOrders = await _orderRepository.GetByUserIdAsync(userId);
+
+        return Ok(userOrders.Select(o => o.ToOrderDto()));
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateOrderRequestDto createOrderDto)
+    {
+        var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+        if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
+        {
+            return Unauthorized("Invalid or missing user ID.");
+        }
+
         var order = new Order
         {
+            AppUserId = userId,
             OrderItems = createOrderDto.Items.Select(i => new OrderItem
             {
                 FoodItemId = i.FoodItemId,
@@ -69,9 +91,9 @@ public class OrderController : ControllerBase
     }
 
     [HttpPut("{id:guid}")]
-    public async Task<ActionResult<OrderDto>> Update(Guid id, UpdateOrderRequestDto updateOrderDto)
+    public async Task<IActionResult> Update(Guid id, UpdateOrderRequestDto updateOrderDto)
     {
-        var existingOrder = await _orderRepository.GetById(id);
+        var existingOrder = await _orderRepository.GetByIdAsync(id);
 
         if (existingOrder == null)
             return NotFound();
@@ -91,7 +113,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpDelete("{id:guid}")]
-    public async Task<ActionResult> Delete(Guid id)
+    public async Task<IActionResult> Delete(Guid id)
     {
         var order = await _orderRepository.DeleteAsync(id);
 

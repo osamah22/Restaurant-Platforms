@@ -9,7 +9,7 @@ public static class AppUserMappers
     {
         return new AppUser
         {
-            FirstName = registerUserDto.FisrtName,
+            FirstName = registerUserDto.FirstName,
             LastName = registerUserDto.LastName,
             UserName = registerUserDto.UserName,
             Email = registerUserDto.Email,

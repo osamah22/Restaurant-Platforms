@@ -14,7 +14,7 @@ public class OrderRepository : IOrderRepository
         _context = context;
     }
 
-    public async Task<List<Order>> GetAll()
+    public async Task<List<Order>> GetAllAsync()
     {
         return await _context.Orders
             .Include(o => o.OrderItems!)
@@ -23,7 +23,17 @@ public class OrderRepository : IOrderRepository
             .ToListAsync();
     }
 
-    public async Task<List<Order>> GetByRestaurantId(Guid RestId)
+    public async Task<List<Order>> GetByUserIdAsync(Guid appUserId)
+    {
+        return await _context.Orders
+          .Include(o => o.OrderItems!)
+          .ThenInclude(oi => oi.FoodItem)
+          .ThenInclude(fi => fi!.Restaurant)
+          .Where(o => o.AppUserId == appUserId)
+          .ToListAsync();
+    }
+
+    public async Task<List<Order>> GetByRestaurantIdAsync(Guid RestId)
     {
         return await _context.Orders
           .Include(o => o.OrderItems!)
@@ -33,7 +43,7 @@ public class OrderRepository : IOrderRepository
           .ToListAsync();
     }
 
-    public async Task<Order?> GetById(Guid Id)
+    public async Task<Order?> GetByIdAsync(Guid Id)
     {
         return await _context.Orders
             .Include(o => o.OrderItems!)
@@ -49,7 +59,7 @@ public class OrderRepository : IOrderRepository
 
         await _context.Orders.AddAsync(order);
         await _context.SaveChangesAsync();
-        var newOrder = await GetById(order.Id) ?? order; // Joining the tables
+        var newOrder = await GetByIdAsync(order.Id) ?? order; // Joining the tables
         return newOrder; 
     }
 
@@ -93,6 +103,7 @@ public class OrderRepository : IOrderRepository
         }
 
         await _context.SaveChangesAsync();
+        existingOrder = await GetByIdAsync(order.Id) ?? existingOrder; // Joining the tables
         return existingOrder;
     }
 
