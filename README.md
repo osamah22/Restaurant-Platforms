@@ -7,7 +7,8 @@ Key Features
     Order Management: Users can create and update orders with multiple food items from different restaurants.
     Restaurant and Food Item Association: Orders are linked to specific restaurants and food items, ensuring data integrity and a smooth user experience.
     Robust Error Handling: The project includes validation checks and error handling mechanisms to ensure that null or invalid data does not break the application.
-
+    User Authentication and Authorization: Implement user jwt-token-based authentication to access to certain API endpoints.
+    
 Technologies Used
 
     ASP.NET Core: Web API framework for building RESTful services.
