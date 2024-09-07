@@ -1,4 +1,4 @@
-﻿namespace Restaurants_Platform.HelperClasses;
+﻿namespace Restaurants_Platform.Helpers;
 
 public class Result<T>
 {

@@ -14,6 +14,7 @@ public class ApplicationContext : IdentityDbContext<AppUser, IdentityRole<Guid>,
     public DbSet<FoodItem> FoodItems { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<OrderStatus> OrderStatuses { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -58,6 +59,10 @@ public class ApplicationContext : IdentityDbContext<AppUser, IdentityRole<Guid>,
             .WithOne(o => o.AppUser)
             .HasForeignKey(o => o.AppUserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        // Order Status Seeding
+        builder.Entity<OrderStatus>()
+            .HasData(OrderStatusMap.GetAllOrderStatuses());
 
         base.OnModelCreating(builder);
     }

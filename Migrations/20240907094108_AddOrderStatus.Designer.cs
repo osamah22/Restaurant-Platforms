@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Restaurants_Platform.Data;
@@ -11,9 +12,11 @@ using Restaurants_Platform.Data;
 namespace Restaurants_Platform.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240907094108_AddOrderStatus")]
+    partial class AddOrderStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -318,7 +321,7 @@ namespace Restaurants_Platform.Migrations
                         new
                         {
                             Id = 2,
-                            Name = "Out For Delivery"
+                            Name = "OutForDelivery"
                         },
                         new
                         {
@@ -328,7 +331,12 @@ namespace Restaurants_Platform.Migrations
                         new
                         {
                             Id = 4,
-                            Name = "Canceled"
+                            Name = "CanceledByClient"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "CanceledByRestaurant"
                         });
                 });
 

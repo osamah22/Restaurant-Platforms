@@ -146,3 +146,4 @@ C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.AspNetCore.Aut
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Castle.Core.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.sourcelink.json
+C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll

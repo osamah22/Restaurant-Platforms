@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Restaurants_Platform.HelperClasses;
+using Restaurants_Platform.Helpers;
 using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Models;
 
