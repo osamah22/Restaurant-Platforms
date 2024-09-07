@@ -7,13 +7,14 @@ Key Features
     Order Management: Users can create and update orders with multiple food items from different restaurants.
     Restaurant and Food Item Association: Orders are linked to specific restaurants and food items, ensuring data integrity and a smooth user experience.
     Robust Error Handling: The project includes validation checks and error handling mechanisms to ensure that null or invalid data does not break the application.
-
+    User Authentication and Authorization: Implement user jwt-token-based authentication to access to certain API endpoints.
+    
 Technologies Used
 
     ASP.NET Core: Web API framework for building RESTful services.
     Entity Framework Core: Object-relational mapper (ORM) for database interactions.
-    SQL Server: Relational database management system (RDBMS) used for data storage.
-    AutoMapper: Library used for mapping between models and data transfer objects (DTOs).
+    Postgres SQL: Relational database management system (RDBMS) used for data storage.
+    
 Getting Started
 
     Clone the repository:
@@ -40,6 +41,7 @@ Possible Improvements
     Improved Validation: Enhance the validation logic, including custom validators and more comprehensive error messages.
     Unit and Integration Testing: Expand the test coverage to include more unit and integration tests, ensuring the robustness of the application.
     Containerization: Dockerize the application to simplify deployment and scalability.
+    Usage of AutoMapper: Library used for mapping between models and data transfer objects (DTOs).
 
 Contribution
 
