@@ -1,6 +1,4 @@
-﻿using Restaurants_Platform.Models;
-
-namespace Restaurants_Platform.Dtos.Orders.OrderItems;
+﻿namespace Restaurants_Platform.Dtos.Orders.OrderItems;
 
 // Used in CreateOrderDto
 public class CreateOrderItemDto

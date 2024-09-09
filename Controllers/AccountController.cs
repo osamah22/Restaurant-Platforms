@@ -37,7 +37,7 @@ public class AccountController : ControllerBase
             return BadRequest(identityResult.Errors);
     }
 
-    
+
     [HttpPost("Login"), AllowAnonymous]
     public async Task<IActionResult> Login(LoginDto loginDto)
     {

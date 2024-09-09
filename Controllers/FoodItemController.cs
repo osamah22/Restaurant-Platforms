@@ -42,19 +42,19 @@ public class FoodItemController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddItem(CreateFoodItemRequest itemDto)
     {
-        if(!ModelState.IsValid)
+        if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
         if (!await _restaurantRepo.IsExitAsync(itemDto.RestId))
             return NotFound("Restaurant does not exit");
 
         var item = await _foodItemRepo.CreateAsync(itemDto.ToFoodItemFromCreate());
-        
-        return CreatedAtAction(nameof(GetById), new {id = item.Id}, item.ToFoodItemDto());
+
+        return CreatedAtAction(nameof(GetById), new { id = item.Id }, item.ToFoodItemDto());
     }
 
     [HttpPut("{id:guid}")]
-    public async Task<IActionResult> Update([FromRoute]Guid id, UpdateFoodItemRequestDto updateDto)
+    public async Task<IActionResult> Update([FromRoute] Guid id, UpdateFoodItemRequestDto updateDto)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);

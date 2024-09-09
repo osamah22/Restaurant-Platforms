@@ -48,7 +48,7 @@ public class OrderRepository : IOrderRepository
         return await _context.Orders
             .Include(o => o.OrderItems!)
             .ThenInclude(oi => oi.FoodItem)
-            .ThenInclude(fi => fi!.Restaurant) 
+            .ThenInclude(fi => fi!.Restaurant)
             .FirstOrDefaultAsync(o => o.Id == Id);
     }
 
@@ -60,7 +60,7 @@ public class OrderRepository : IOrderRepository
         await _context.Orders.AddAsync(order);
         await _context.SaveChangesAsync();
         var newOrder = await GetByIdAsync(order.Id) ?? order; // Joining the tables
-        return newOrder; 
+        return newOrder;
     }
 
     public async Task<Order?> UpdateAsync(Guid Id, Order order)

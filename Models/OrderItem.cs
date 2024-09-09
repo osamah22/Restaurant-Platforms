@@ -8,7 +8,7 @@ public class OrderItem
 
     public int Quantity { get; set; }
 
-    public virtual FoodItem? FoodItem {get;set;}
+    public virtual FoodItem? FoodItem { get; set; }
 
     public virtual Order? Order { get; set; }
 }

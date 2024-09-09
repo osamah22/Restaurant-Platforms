@@ -5,10 +5,10 @@ namespace Restaurants_Platform.Data;
 
 public static class OrderStatusMap
 {
-    public static class Preparing 
+    public static class Preparing
     {
-        public static int Id  => 1;
-        public static string Name  => "Preparing";
+        public static int Id => 1;
+        public static string Name => "Preparing";
     }
 
     public static class OutForDelivery

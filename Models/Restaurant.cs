@@ -8,5 +8,5 @@ public class Restaurant
 
     public string? Company { get; set; }
 
-    public virtual List<FoodItem>? Menu {get; set; }
+    public virtual List<FoodItem>? Menu { get; set; }
 }

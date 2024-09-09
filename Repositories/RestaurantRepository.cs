@@ -5,7 +5,7 @@ using Restaurants_Platform.Models;
 
 namespace Restaurants_Platform.Repositories;
 
-public class RestaurantRepository:IRestaurantRepository
+public class RestaurantRepository : IRestaurantRepository
 {
     private readonly ApplicationContext _context;
 

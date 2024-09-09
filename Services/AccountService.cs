@@ -8,7 +8,7 @@ namespace Restaurants_Platform.Services;
 public class AccountService : IAccountService
 {
     private readonly UserManager<AppUser> _userManager;
-    
+
     private readonly SignInManager<AppUser> _signInManager;
 
     public AccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)

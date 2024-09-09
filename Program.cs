@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Restaurants_Platform.Data;
-using Restaurants_Platform.Helpers;
 using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Models;
 using Restaurants_Platform.Repositories;
@@ -60,7 +59,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddScoped<IRestaurantRepository, RestaurantRepository>();
 
-builder.Services.AddScoped<IFoodItemRepository, FoodItemRepository>(); 
+builder.Services.AddScoped<IFoodItemRepository, FoodItemRepository>();
 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 

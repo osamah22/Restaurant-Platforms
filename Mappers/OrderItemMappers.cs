@@ -12,7 +12,7 @@ public static class OrderItemMappers
 
         return new OrderItemDto
         {
-            RestaurantId = orderItemModel!.FoodItem?.Restaurant?.Id.ToString()?? "Not availble",
+            RestaurantId = orderItemModel!.FoodItem?.Restaurant?.Id.ToString() ?? "Not availble",
             RestaurantName = orderItemModel.FoodItem?.Restaurant?.Name ?? "Not availble",
             FoodItemId = orderItemModel.FoodItemId.ToString(),
             FoodItemName = orderItemModel.FoodItem?.Name ?? "Not availble",

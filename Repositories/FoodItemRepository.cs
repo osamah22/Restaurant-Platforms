@@ -10,7 +10,7 @@ public class FoodItemRepository : IFoodItemRepository
     private readonly ApplicationContext _context;
     public FoodItemRepository(ApplicationContext context)
     {
-        _context = context;   
+        _context = context;
     }
 
     public async Task<FoodItem?> GetByIdAsync(Guid id)
@@ -23,7 +23,7 @@ public class FoodItemRepository : IFoodItemRepository
         return await _context.FoodItems.ToListAsync();
     }
 
-    public async Task<List<FoodItem>> GetByRestaurantIdAsync (Guid RestId)
+    public async Task<List<FoodItem>> GetByRestaurantIdAsync(Guid RestId)
     {
         return await _context.FoodItems.Where(item => item.RestId == RestId).ToListAsync();
     }

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Restaurants_Platform.Models;
+﻿namespace Restaurants_Platform.Models;
 
 public class FoodItem
 {
@@ -8,5 +6,5 @@ public class FoodItem
     public string Name { get; set; } = string.Empty;
     public Guid RestId { get; set; }
     public decimal Price { get; set; }
-    public virtual Restaurant? Restaurant {get; set; }
+    public virtual Restaurant? Restaurant { get; set; }
 }

@@ -50,7 +50,7 @@ public class ApplicationContext : IdentityDbContext<AppUser, IdentityRole<Guid>,
         builder.Entity<Order>()
             .HasMany(o => o.OrderItems)
             .WithOne(i => i.Order)
-            .HasForeignKey(i=> i.OrderId)
+            .HasForeignKey(i => i.OrderId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
 

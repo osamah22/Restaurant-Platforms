@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Restaurants_Platform.Data;
 using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Mappers;

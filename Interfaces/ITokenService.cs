@@ -4,5 +4,5 @@ namespace Restaurants_Platform.Interfaces;
 
 public interface ITokenService
 {
-    public string CreateToken (AppUser appUser);
+    public string CreateToken(AppUser appUser);
 }
