@@ -247,7 +247,7 @@ namespace Restaurants_Platform.Migrations
 
                     b.HasIndex("RestId");
 
-                    b.ToTable("FoodItems");
+                    b.ToTable("FoodItems", (string)null);
                 });
 
             modelBuilder.Entity("Restaurants_Platform.Models.Order", b =>
@@ -272,7 +272,7 @@ namespace Restaurants_Platform.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Restaurants_Platform.Models.OrderItem", b =>
@@ -290,7 +290,7 @@ namespace Restaurants_Platform.Migrations
 
                     b.HasIndex("FoodItemId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Restaurants_Platform.Models.OrderStatus", b =>
@@ -307,7 +307,7 @@ namespace Restaurants_Platform.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatuses");
+                    b.ToTable("OrderStatuses", (string)null);
 
                     b.HasData(
                         new
@@ -348,7 +348,7 @@ namespace Restaurants_Platform.Migrations
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:Clustered", false);
 
-                    b.ToTable("Restaurants");
+                    b.ToTable("Restaurants", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
