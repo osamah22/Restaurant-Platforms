@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Restaurants_Platform.Helpers;
+using Restaurants_Platform.Shared;
 using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Models;
+using Restaurants_Platform.Errors;
 
 namespace Restaurants_Platform.Services;
 
@@ -33,20 +34,22 @@ public class AccountService : IAccountService
         var user = await _userManager.FindByNameAsync(userName);
 
         if (user is null)
-            return Result<AppUser>.FailureResult("Username or password is not valid");
+            return Result.Failure<AppUser>(ProcessErrors.LoginErrors.UserNotFound);
 
         if (!await _signInManager.CanSignInAsync(user))
-            return Result<AppUser>.FailureResult("Account cannot sign in");
+            return Result.Failure<AppUser>(ProcessErrors.LoginErrors.AccountIsLockedOut);
 
         var result = await _signInManager.CheckPasswordSignInAsync(user, password, lockoutOnFailure: true);
 
         if (result.Succeeded)
-            return Result<AppUser>.SuccessResult(user, "Login successful");
+            return Result.Success(user);
+
         else if (result.IsLockedOut)
-            return Result<AppUser>.FailureResult("Account is locked out");
+            return Result.Failure<AppUser>(ProcessErrors.LoginErrors.AccountIsLockedOut);
+
         else if (result.IsNotAllowed)
-            return Result<AppUser>.FailureResult("Sign-in not allowed");
-        else
-            return Result<AppUser>.FailureResult("Invalid login attempt");
+            return Result.Failure<AppUser>(ProcessErrors.LoginErrors.SignInNotAllowed);
+
+        throw new Exception("Unexpected error happedned while trying to login");
     }
 }

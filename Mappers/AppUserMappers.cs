@@ -15,4 +15,17 @@ public static class AppUserMappers
             Email = registerUserDto.Email,
         };
     }
+    public static AppUserDto ToAppUserDto(this AppUser appUser)
+    {
+        // To Supress null warnings
+        ArgumentNullException.ThrowIfNull(appUser.Email);
+        ArgumentNullException.ThrowIfNull(appUser.UserName);
+
+        return new()
+        {
+            Id = appUser.Id,
+            Username = appUser.UserName.ToLower(),
+            Email = appUser.Email.ToLower(),
+        };
+    }
 }

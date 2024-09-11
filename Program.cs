@@ -63,6 +63,8 @@ builder.Services.AddScoped<IFoodItemRepository, FoodItemRepository>();
 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
+builder.Services.AddScoped<IReviewService, ReviewService>();
+
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

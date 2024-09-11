@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restaurants_Platform.Dtos.Users;
+using Restaurants_Platform.Errors;
 using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Mappers;
 
@@ -32,11 +33,11 @@ public class AccountController : ControllerBase
             .CreateAppUserAsync(user, registerUser.Password);
 
         if (identityResult.Succeeded)
-            return Ok(value: new { accessToken = _tokenService.CreateToken(user), user = user });
-        else
-            return BadRequest(identityResult.Errors);
+            return CreatedAtAction(nameof(Login),
+                new { accessToken = _tokenService.CreateToken(user), user = user.ToAppUserDto()});
+        
+        return BadRequest(identityResult.Errors.Select(err => err.GetUserFriendlyErrorMessage()));
     }
-
 
     [HttpPost("Login"), AllowAnonymous]
     public async Task<IActionResult> Login(LoginDto loginDto)
@@ -46,9 +47,9 @@ public class AccountController : ControllerBase
 
         var result = await _accountService.LoginAsync(loginDto.UserName, loginDto.Password);
 
-        if (result.Success)
-            return Ok(_tokenService.CreateToken(result.Data!));
-
-        return BadRequest(result.Message);
+        if (result.IsSuccess)
+            return Ok(_tokenService.CreateToken(result.Value));
+        
+        return Unauthorized(result.Error.Message);
     }
 }

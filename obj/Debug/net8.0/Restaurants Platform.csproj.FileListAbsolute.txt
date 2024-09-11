@@ -7,7 +7,9 @@ C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Restaurants Platform.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Restaurants Platform.pdb
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Azure.Core.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Azure.Identity.dll
+C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Castle.Core.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Humanizer.dll
+C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -20,6 +22,8 @@ C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.Data.SqlClient
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
@@ -38,6 +42,8 @@ C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Npgsql.dll
+C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -126,6 +132,7 @@ C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.Ass
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.csproj.CoreCompileInputs.cache
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.MvcApplicationPartsAssemblyInfo.cs
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.MvcApplicationPartsAssemblyInfo.cache
+C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.sourcelink.json
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\staticwebassets.build.json
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\staticwebassets.development.json
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\staticwebassets\msbuild.Restaurants Platform.Microsoft.AspNetCore.StaticWebAssets.props
@@ -140,10 +147,3 @@ C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\refint\Restaurants Platf
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.pdb
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.genruntimeconfig.cache
 C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\ref\Restaurants Platform.dll
-C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Npgsql.dll
-C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Castle.Core.dll
-C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
-C:\My_projects\c#\Restaurants Platform\obj\Debug\net8.0\Restaurants Platform.sourcelink.json
-C:\My_projects\c#\Restaurants Platform\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
