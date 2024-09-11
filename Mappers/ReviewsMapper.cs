@@ -1,5 +1,5 @@
-﻿using Restaurants_Platform.Dtos;
-using Restaurants_Platform.Dtos.Reviews;
+﻿using Restaurants_Platform.DTOs;
+using Restaurants_Platform.DTOs.Reviews;
 using Restaurants_Platform.Models;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;

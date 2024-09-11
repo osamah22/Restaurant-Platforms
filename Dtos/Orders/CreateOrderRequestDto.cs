@@ -1,7 +1,7 @@
-﻿using Restaurants_Platform.Dtos.Orders.OrderItems;
+﻿using Restaurants_Platform.DTOs.Orders.OrderItems;
 using System.ComponentModel.DataAnnotations;
 
-namespace Restaurants_Platform.Dtos.Orders;
+namespace Restaurants_Platform.DTOs.Orders;
 
 public record CreateOrderRequestDto
 {

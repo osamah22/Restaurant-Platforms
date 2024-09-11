@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Restaurants_Platform.Dtos;
+namespace Restaurants_Platform.DTOs;
 
 public class CreateReviewDto
 {

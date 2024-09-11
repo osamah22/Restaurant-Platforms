@@ -1,4 +1,4 @@
-﻿namespace Restaurants_Platform.Dtos.Orders.OrderItems;
+﻿namespace Restaurants_Platform.DTOs.Orders.OrderItems;
 
 public record OrderItemDto
 {

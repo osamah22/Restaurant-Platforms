@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Restaurants_Platform.Dtos.Orders;
+using Restaurants_Platform.DTOs.Orders;
 using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Mappers;
 using Restaurants_Platform.Models;

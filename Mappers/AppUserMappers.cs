@@ -1,4 +1,4 @@
-﻿using Restaurants_Platform.Dtos.Users;
+﻿using Restaurants_Platform.DTOs.Users;
 using Restaurants_Platform.Models;
 
 namespace Restaurants_Platform.Mappers;

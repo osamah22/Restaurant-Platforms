@@ -22,6 +22,6 @@ public class ProcessErrors
 
         public static readonly Error SignInNotAllowed = new Error(
             "Login.SignInNotAllowed",
-            "Sign in is not allowed.");
+            "SignIn is not allowed.");
     }
 }

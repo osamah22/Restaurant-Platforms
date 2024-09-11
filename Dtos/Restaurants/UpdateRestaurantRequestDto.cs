@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace Restaurants_Platform.Dtos.Restaurants;
+namespace Restaurants_Platform.DTOs.Restaurants;
 
 public record UpdateRestaurantRequestDto
 {

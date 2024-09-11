@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Restaurants_Platform.Dtos.Restaurants;
+using Restaurants_Platform.DTOs.Restaurants;
 using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Mappers;
 using Restaurants_Platform.Models;

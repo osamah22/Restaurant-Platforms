@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Restaurants_Platform.Dtos.Users;
+using Restaurants_Platform.DTOs.Users;
 using Restaurants_Platform.Errors;
 using Restaurants_Platform.Interfaces;
 using Restaurants_Platform.Mappers;

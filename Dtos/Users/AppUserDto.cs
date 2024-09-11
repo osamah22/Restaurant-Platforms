@@ -1,4 +1,4 @@
-﻿namespace Restaurants_Platform.Dtos.Users;
+﻿namespace Restaurants_Platform.DTOs.Users;
 
 public class AppUserDto
 {

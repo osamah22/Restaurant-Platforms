@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\My_projects\\c#\\Restaurants Platform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|c:\\my_projects\\c#\\restaurants platform\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|solutionrelative:entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|c:\\my_projects\\c#\\restaurants platform\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|solutionrelative:services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|c:\\my_projects\\c#\\restaurants platform\\dtos\\fooditems\\createfooditemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|solutionrelative:dtos\\fooditems\\createfooditemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|c:\\my_projects\\c#\\restaurants platform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|c:\\my_projects\\c#\\restaurants platform\\controllers\\restaurantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBADB431-630C-4E8E-966C-E6C3A6806075}|Restaurants Platform.csproj|solutionrelative:controllers\\restaurantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\My_projects\\c#\\Restaurants Platform\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "Entities\\Review.cs",
-              "ToolTip": "C:\\My_projects\\c#\\Restaurants Platform\\Entities\\Review.cs",
-              "RelativeToolTip": "Entities\\Review.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "CreateFoodItemRequest.cs",
+              "DocumentMoniker": "C:\\My_projects\\c#\\Restaurants Platform\\DTOs\\FoodItems\\CreateFoodItemRequest.cs",
+              "RelativeDocumentMoniker": "DTOs\\FoodItems\\CreateFoodItemRequest.cs",
+              "ToolTip": "C:\\My_projects\\c#\\Restaurants Platform\\DTOs\\FoodItems\\CreateFoodItemRequest.cs",
+              "RelativeToolTip": "DTOs\\FoodItems\\CreateFoodItemRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T12:53:10.701Z",
+              "WhenOpened": "2024-09-11T13:52:54.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RestaurantController.cs",
+              "DocumentMoniker": "C:\\My_projects\\c#\\Restaurants Platform\\Controllers\\RestaurantController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RestaurantController.cs",
+              "ToolTip": "C:\\My_projects\\c#\\Restaurants Platform\\Controllers\\RestaurantController.cs",
+              "RelativeToolTip": "Controllers\\RestaurantController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T13:51:02.195Z",
               "EditorCaption": ""
             },
             {
@@ -44,27 +57,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ReviewService.cs",
-              "DocumentMoniker": "C:\\My_projects\\c#\\Restaurants Platform\\Services\\ReviewService.cs",
-              "RelativeDocumentMoniker": "Services\\ReviewService.cs",
-              "ToolTip": "C:\\My_projects\\c#\\Restaurants Platform\\Services\\ReviewService.cs",
-              "RelativeToolTip": "Services\\ReviewService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T12:38:55.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\My_projects\\c#\\Restaurants Platform\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\My_projects\\c#\\Restaurants Platform\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAAwEQAAAAAAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAcwEAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T16:16:15.955Z"
+              "WhenOpened": "2024-09-09T16:16:15.955Z",
+              "EditorCaption": ""
             }
           ]
         }

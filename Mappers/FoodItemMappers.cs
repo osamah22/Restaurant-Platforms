@@ -1,4 +1,4 @@
-﻿using Restaurants_Platform.Dtos.FoodItems;
+﻿using Restaurants_Platform.DTOs.FoodItems;
 using Restaurants_Platform.Models;
 
 namespace Restaurants_Platform.Mappers;

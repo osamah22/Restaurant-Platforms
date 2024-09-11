@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Restaurants_Platform.Dtos.FoodItems;
+namespace Restaurants_Platform.DTOs.FoodItems;
 
 public class UpdateFoodItemRequestDto
 {

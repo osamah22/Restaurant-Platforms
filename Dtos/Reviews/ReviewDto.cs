@@ -1,6 +1,6 @@
 ﻿using Restaurants_Platform.Models;
 
-namespace Restaurants_Platform.Dtos.Reviews;
+namespace Restaurants_Platform.DTOs.Reviews;
 
 public class ReviewDto
 {
